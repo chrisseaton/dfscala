@@ -222,182 +222,6 @@ object DFManager {
     thread.addThread(dt)
     dt
   }
-
-  //DFThread1
-  def createThread[T1, R](f: (T1) => R): DFThread1[T1, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, R](f: (T1) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread1[T1, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, R](f: (T1) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread1[T1, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread1Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-
-  //DFThread2
-  def createThread[T1, T2, R](f: (T1, T2) => R): DFThread2[T1, T2, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, R](f: (T1, T2) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread2[T1, T2, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, R](f: (T1, T2) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread2[T1, T2, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread2Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-
-  //DFThread3
-  def createThread[T1, T2, T3, R](f: (T1, T2, T3) => R): DFThread3[T1, T2, T3, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, R](f: (T1, T2, T3) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread3[T1, T2, T3, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, R](f: (T1, T2, T3) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread3[T1, T2, T3, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread3Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-
-  //DFThread4
-  def createThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R): DFThread4[T1, T2, T3, T4, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread4[T1, T2, T3, T4, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread4[T1, T2, T3, T4, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread4Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-
-  //DFThread5
-  def createThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R): DFThread5[T1, T2, T3, T4, T5, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread5[T1, T2, T3, T4, T5, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread5[T1, T2, T3, T4, T5, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread5Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-  
-  //DFThread6
-  def createThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread6Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-  
-  //DFThread7
-  def createThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread7Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-  
-  //DFThread8
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread8Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-  
-  //DFThread9
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread9Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-  
-  //DFThread10
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread10Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
-  
-  //DFThread11
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
-    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
-    createThread(f, List(bIn), List(bOut))
-  }
-
-  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
-    val thread = currentThread.get()
-    val dt = new DFThread11Runable(f, barIn, barOut, false, thread.manager)
-    thread.addThread(dt)
-    dt
-  }
   
   //List threads : Collector
   def createCollectorThread[E](no_args: Int): DFThread1[E,List[E]] = {
@@ -540,68 +364,502 @@ object DFManager {
     dt
   }
 
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, R](f: (T1) => R): DFThread1[T1, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, R](f: (T1) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread1[T1, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, R](f: (T1) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread1[T1, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread1Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, R](f: (T1) => R, manager: DFManager): DFThread1[T1, R] = {
     val dt = new DFThread1Runable[T1, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
 
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, R](f: (T1, T2) => R): DFThread2[T1, T2, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, R](f: (T1, T2) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread2[T1, T2, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, R](f: (T1, T2) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread2[T1, T2, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread2Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, R](f: (T1, T2) => R, manager: DFManager): DFThread2[T1, T2, R] = {
     val dt = new DFThread2Runable[T1, T2, R](f, List(), List(), true, manager)
-   registerDFThread(manager, dt)
+    registerDFThread(manager, dt)
     dt
   }
 
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, R](f: (T1, T2, T3) => R): DFThread3[T1, T2, T3, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, R](f: (T1, T2, T3) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread3[T1, T2, T3, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, R](f: (T1, T2, T3) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread3[T1, T2, T3, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread3Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, R](f: (T1, T2, T3) => R, manager: DFManager): DFThread3[T1, T2, T3, R] = {
-    val dt = new DFThread3Runable[T1,T2,T3,R](f, List(), List(), true, manager)
-   registerDFThread(manager, dt)
+    val dt = new DFThread3Runable[T1, T2, T3, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
     dt
   }
 
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R): DFThread4[T1, T2, T3, T4, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread4[T1, T2, T3, T4, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread4[T1, T2, T3, T4, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread4Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, R](f: (T1, T2, T3, T4) => R, manager: DFManager): DFThread4[T1, T2, T3, T4, R] = {
-    val dt = new DFThread4Runable[T1,T2,T3,T4,R](f, List(), List(), true, manager)
+    val dt = new DFThread4Runable[T1, T2, T3, T4, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R): DFThread5[T1, T2, T3, T4, T5, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread5[T1, T2, T3, T4, T5, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread5[T1, T2, T3, T4, T5, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread5Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, R](f: (T1, T2, T3, T4, T5) => R, manager: DFManager): DFThread5[T1, T2, T3, T4, T5, R] = {
-    val dt = new DFThread5Runable[T1,T2,T3,T4,T5,R](f, List(), List(), true, manager)
+    val dt = new DFThread5Runable[T1, T2, T3, T4, T5, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread6Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, R](f: (T1, T2, T3, T4, T5, T6) => R, manager: DFManager): DFThread6[T1, T2, T3, T4, T5, T6, R] = {
-    val dt = new DFThread6Runable[T1,T2,T3,T4,T5,T6,R](f, List(), List(), true, manager)
+    val dt = new DFThread6Runable[T1, T2, T3, T4, T5, T6, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread7Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, R](f: (T1, T2, T3, T4, T5, T6, T7) => R, manager: DFManager): DFThread7[T1, T2, T3, T4, T5, T6, T7, R] = {
-    val dt = new DFThread7Runable[T1,T2,T3,T4,T5,T6,T7,R](f, List(), List(), true, manager)
+    val dt = new DFThread7Runable[T1, T2, T3, T4, T5, T6, T7, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread8Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, R](f: (T1, T2, T3, T4, T5, T6, T7, T8) => R, manager: DFManager): DFThread8[T1, T2, T3, T4, T5, T6, T7, T8, R] = {
-    val dt = new DFThread8Runable[T1,T2,T3,T4,T5,T6,T7,T8,R](f, List(), List(), true, manager)
+    val dt = new DFThread8Runable[T1, T2, T3, T4, T5, T6, T7, T8, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread9Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9) => R, manager: DFManager): DFThread9[T1, T2, T3, T4, T5, T6, T7, T8, T9, R] = {
-    val dt = new DFThread9Runable[T1,T2,T3,T4,T5,T6,T7,T8,T9,R](f, List(), List(), true, manager)
+    val dt = new DFThread9Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread10Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) => R, manager: DFManager): DFThread10[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R] = {
-    val dt = new DFThread10Runable[T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,R](f, List(), List(), true, manager)
+    val dt = new DFThread10Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
-  
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread11Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
   private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) => R, manager: DFManager): DFThread11[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R] = {
-    val dt = new DFThread11Runable[T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,R](f, List(), List(), true, manager)
+    val dt = new DFThread11Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) => R): DFThread12[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread12[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread12[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread12Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) => R, manager: DFManager): DFThread12[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R] = {
+    val dt = new DFThread12Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) => R): DFThread13[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread13[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread13[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread13Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) => R, manager: DFManager): DFThread13[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R] = {
+    val dt = new DFThread13Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) => R): DFThread14[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread14[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread14[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread14Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) => R, manager: DFManager): DFThread14[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R] = {
+    val dt = new DFThread14Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) => R): DFThread15[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread15[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread15[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread15Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) => R, manager: DFManager): DFThread15[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R] = {
+    val dt = new DFThread15Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) => R): DFThread16[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread16[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread16[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread16Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) => R, manager: DFManager): DFThread16[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R] = {
+    val dt = new DFThread16Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) => R): DFThread17[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread17[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread17[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread17Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) => R, manager: DFManager): DFThread17[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R] = {
+    val dt = new DFThread17Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) => R): DFThread18[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread18[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread18[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread18Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) => R, manager: DFManager): DFThread18[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R] = {
+    val dt = new DFThread18Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) => R): DFThread19[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread19[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread19[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread19Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) => R, manager: DFManager): DFThread19[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R] = {
+    val dt = new DFThread19Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, R](f, List(), List(), true, manager)
+    registerDFThread(manager, dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) => R): DFThread20[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R] = {
+    createThread(f, List(): List[DFBarrier], List(): List[DFBarrier])
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) => R, bIn: DFBarrier, bOut: DFBarrier): DFThread20[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R] = {
+    createThread(f, List(bIn), List(bOut))
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  def createThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) => R, barIn: List[DFBarrier], barOut: List[DFBarrier]): DFThread20[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R] = {
+    val thread = currentThread.get()
+    val dt = new DFThread20Runable(f, barIn, barOut, false, thread.manager)
+    thread.addThread(dt)
+    dt
+  }
+
+  // Automatically generated - edit tools/thread-code.py, rather than this code
+  private[dataflow] def createStartThread[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R](f: (T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) => R, manager: DFManager): DFThread20[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R] = {
+    val dt = new DFThread20Runable[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, R](f, List(), List(), true, manager)
     registerDFThread(manager, dt)
     dt
   }
