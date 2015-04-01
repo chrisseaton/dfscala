@@ -51,7 +51,7 @@ object NullToken extends Token[Any](_ => ())
   override def apply(t:Any) = DFLogger.nullTokenPassed(DFManager.currentThread.get)
 }
 
-abstract case class OptionArg[+T] {
+sealed trait OptionArg[+T] {
   def toOption: Option[T]
 }
 
